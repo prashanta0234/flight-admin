@@ -57,6 +57,9 @@ const AddFlights = () => {
 	if (error) {
 		const e = structureError(error);
 		toast.error(e.message);
+		if ("status" in error) {
+			error.status === 401 && navigate(`/login`);
+		}
 	}
 
 	if (data) {

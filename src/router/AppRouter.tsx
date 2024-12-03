@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Protected from "../layout/Protected";
 import Flights from "../pages/Flights";
 import AddFlights from "../pages/AddFlights";
+import Bookings from "../pages/Bookings";
 
 const router = createBrowserRouter([
 	{
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
 				children: [
 					{ path: "/", element: <App /> },
 					{ path: "/flights", element: <Flights /> },
-					{ path: "add-flights", element: <AddFlights /> },
+					{ path: "/add-flights", element: <AddFlights /> },
+					{ path: "/bookings", element: <Bookings /> },
 				],
 			},
 		],
