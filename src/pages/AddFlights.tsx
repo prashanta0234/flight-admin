@@ -50,8 +50,6 @@ const AddFlights = () => {
 			time: pressTime,
 		};
 		createFlight(processedData);
-
-		console.log("Flight Data Submitted: ", processedData);
 	};
 
 	if (error) {
