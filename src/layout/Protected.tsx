@@ -5,9 +5,12 @@ import { jwtType } from "../types/jwtType";
 
 const Protected = () => {
 	const token = Cookies.get("user-token");
-	const decoded = jwtDecode<jwtType>(token as string);
+	let decoded;
+	if (token) {
+		decoded = jwtDecode<jwtType>(token as string);
+	}
 
-	return token && decoded.role === "ADMIN" ? (
+	return token && decoded?.role === "ADMIN" ? (
 		<Outlet />
 	) : (
 		<Navigate to="/login" />
